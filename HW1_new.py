@@ -40,7 +40,6 @@ class HW1TestDataset(Dataset):
 class HW1TrainDataset(Dataset):
     def __init__(self, transforms=None):
         self.transforms = transforms
-        # self.root_dir = Path(root_dir)
         self.input = file
         self.filename = number.tolist()
 
@@ -147,14 +146,12 @@ if __name__ == '__main__':
     file = train_label['id']
     file = [str('%06d' % int(i)) + ".jpg" for i in file]
     file = ['./dataset/training_data/' + str(i) for i in file]
-    # np.save('file_train.npy', file)
 
     brand = train_label['label'].to_numpy()
     number = []
     for i in range(len(brand)):
         number.append(car_dic[brand[i]])
     number = np.array(number)
-    # np.save("number_train.npy", number)
 
     data_transforms = {
         'train': transforms.Compose([
