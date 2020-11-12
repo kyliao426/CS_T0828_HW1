@@ -76,7 +76,7 @@ def train(train_dataset, load):
                                 lr=0.001,
                                 momentum=0.9)
 
-    for epoch in range(2):
+    for epoch in range(20):
         print('Epoch: {:d}'.format(epoch+1))
         print('-' * len('Epoch: {:d}'.format(epoch+1)))
         train_loss = 0.0
